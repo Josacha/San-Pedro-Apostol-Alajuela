@@ -1,10 +1,11 @@
 let diaActual = new Date();
 
-// Objeto de agenda principal
+// Objeto donde se almacenarán todas las fechas calculadas
 const agenda = {};
 
 /**
- * Llena la agenda automáticamente para un año específico
+ * Genera automáticamente el calendario de todo el año
+ * @param {number} anio - El año que se desea poblar (ej. 2025)
  */
 function programarCalendarioAnual(anio) {
     const inicio = new Date(anio, 0, 1);
@@ -15,7 +16,7 @@ function programarCalendarioAnual(anio) {
         const fechaStr = d.toISOString().split("T")[0];
 
         if (diaSemana === 0) { 
-            // DOMINGOS
+            // --- DOMINGOS ---
             agenda[fechaStr] = [
                 { hora: "7:00 a.m.", evento: "Misa Dominical", icono: "fa-church" },
                 { hora: "9:00 a.m.", evento: "Misa Dominical", icono: "fa-church" },
@@ -23,13 +24,20 @@ function programarCalendarioAnual(anio) {
                 { hora: "5:00 p.m.", evento: "Misa Dominical", icono: "fa-church" }
             ];
         } else if (diaSemana === 6) { 
-            // SÁBADOS
+            // --- SÁBADOS ---
             agenda[fechaStr] = [
                 { hora: "4:00 p.m.", evento: "Misa de Vísperas", icono: "fa-church" },
                 { hora: "6:00 p.m.", evento: "Misa de Vísperas", icono: "fa-church" }
             ];
+        } else if (diaSemana === 4) { 
+            // --- JUEVES (Especial: Sin misa 6pm) ---
+            agenda[fechaStr] = [
+                { hora: "8:00 a.m.", evento: "Misa matutina", icono: "fa-church" },
+                { hora: "9:00 a.m.", evento: "Atención oficina parroquial", icono: "fa-building" },
+                { hora: "6:30 p.m.", evento: "Hora Santa", icono: "fa-sun" }
+            ];
         } else {
-            // LUNES A VIERNES (Días entre semana)
+            // --- LUNES, MARTES, MIÉRCOLES Y VIERNES ---
             agenda[fechaStr] = [
                 { hora: "9:00 a.m.", evento: "Atención oficina parroquial", icono: "fa-building" },
                 { hora: "6:00 p.m.", evento: "Misa entre semana", icono: "fa-wine-glass" }
@@ -38,24 +46,27 @@ function programarCalendarioAnual(anio) {
     }
 }
 
-// Ejecutamos la programación para el año actual y el siguiente
+// Inicializamos la agenda para los años deseados
 programarCalendarioAnual(2025);
 programarCalendarioAnual(2026);
 
 /**
- * Formatea la fecha para buscarla en el objeto agenda
+ * Formatea el objeto Date a string YYYY-MM-DD evitando desfases de zona horaria
  */
 function formatearFecha(fecha) {
-    // Ajuste para evitar desfases de zona horaria
     const tzOffset = fecha.getTimezoneOffset() * 60000;
     return new Date(fecha - tzOffset).toISOString().split("T")[0];
 }
 
+/**
+ * Renderiza la información en el HTML
+ */
 function mostrarAgenda() {
     const fechaStr = formatearFecha(diaActual);
     const contenedor = document.getElementById("agenda-contenido");
     const tituloFecha = document.getElementById("fecha-actual");
 
+    // Título de la fecha en formato largo
     tituloFecha.textContent = diaActual.toLocaleDateString("es-CR", {
         weekday: "long",
         year: "numeric",
@@ -92,9 +103,13 @@ function mostrarAgenda() {
     }
 }
 
+/**
+ * Cambia el día actual y refresca la vista
+ */
 function cambiarDia(cantidad) {
     diaActual.setDate(diaActual.getDate() + cantidad);
     mostrarAgenda();
 }
 
+// Iniciar cuando cargue la página
 document.addEventListener("DOMContentLoaded", mostrarAgenda);
