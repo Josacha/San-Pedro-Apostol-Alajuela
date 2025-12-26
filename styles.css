@@ -108,8 +108,8 @@ section {
 .hero::before {
     content: "";
     background-image: 
-        url("../Parroquia/Imagenes/Templo_dorado.png"),
-        url("../Parroquia/Imagenes/Templo_dorado.png");
+        url("../Imagenes/Templo_dorado.png"),
+        url("../Imagenes/Templo_dorado.png");
 
     background-repeat: no-repeat, no-repeat;
     background-size: 175px auto, 175px auto;
@@ -462,3 +462,4 @@ article:hover {
     font-size: 2rem;
     opacity: 0.12;
 }
+
