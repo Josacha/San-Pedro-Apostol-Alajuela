@@ -39,8 +39,8 @@ function programarCalendarioAnual(anio) {
         } else {
             // --- LUNES, MARTES, MIÉRCOLES Y VIERNES ---
             agenda[fechaStr] = [
-                { hora: "8:00 a.m.", evento: "Misa Matutina", icono: "fa-wine-glass" }
-                { hora: "9:00 a.m.", evento: "Atención oficina parroquial", icono: "fa-building" },
+                { hora: "8:00 a.m.", evento: "Misa Matutina", icono: "fa-wine-glass" },
+                { hora: "9:00 a.m.", evento: "Atención oficina parroquial", icono: "fa-building" }
                 
             ];
         }
