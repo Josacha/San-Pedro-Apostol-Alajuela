@@ -114,4 +114,3 @@ function cambiarDia(cantidad) {
 
 // Iniciar cuando cargue la página
 document.addEventListener("DOMContentLoaded", mostrarAgenda);
-
