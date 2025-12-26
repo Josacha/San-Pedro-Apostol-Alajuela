@@ -39,8 +39,9 @@ function programarCalendarioAnual(anio) {
         } else {
             // --- LUNES, MARTES, MIÉRCOLES Y VIERNES ---
             agenda[fechaStr] = [
+                { hora: "8:00 a.m.", evento: "Misa Matutina", icono: "fa-wine-glass" }
                 { hora: "9:00 a.m.", evento: "Atención oficina parroquial", icono: "fa-building" },
-                { hora: "6:00 p.m.", evento: "Misa entre semana", icono: "fa-wine-glass" }
+                
             ];
         }
     }
@@ -113,3 +114,4 @@ function cambiarDia(cantidad) {
 
 // Iniciar cuando cargue la página
 document.addEventListener("DOMContentLoaded", mostrarAgenda);
+
