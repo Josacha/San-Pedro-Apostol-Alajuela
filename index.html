@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parroquia San Pedro Apóstol – Poás</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<script src="agenda.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="header-content">
+       
+
+        <div class="header-text">
+            <h1>Parroquia San Pedro Apóstol</h1>
+            <p>Poás, Alajuela – Costa Rica</p>
+        </div>
+
+        
+    </div>
+</header>
+
+<nav>
+    <a href="#inicio"><i class="fa-solid fa-church"></i> Inicio</a>
+    <a href="#horarios"><i class="fa-solid fa-clock"></i> Horarios</a>
+    <a href="#avisos"><i class="fa-solid fa-bullhorn"></i> Avisos</a>
+    <a href="#contacto"><i class="fa-solid fa-phone"></i> Contacto</a>
+</nav>
+
+<section class="hero">
+    <h2><i class="fa-solid fa-cross"></i> Bienvenidos</h2>
+    <p>Parroquia dedicada al servicio pastoral y comunitario.</p>
+</section>
+
+
+<section id="horarios">
+    <h2><i class="fa-solid fa-clock"></i> Horarios</h2>
+
+    <ul class="horarios-lista">
+        <li>
+            <i class="fa-solid fa-church"></i>
+            <strong>Misa Dominical:</strong> 8:00 a.m. y 6:00 p.m.
+        </li>
+
+        <li>
+            <i class="fa-solid fa-wine-glass"></i>
+            <strong>Misa entre semana:</strong> 6:00 p.m.
+        </li>
+
+        <li>
+            <i class="fa-solid fa-hands-praying"></i>
+            <strong>Confesiones:</strong> Sábados 4:00 p.m.
+        </li>
+    </ul>
+</section>
+
+
+<section id="avisos">
+    <h2><i class="fa-solid fa-bullhorn"></i> Avisos Parroquiales</h2>
+
+    <article class="aviso-item">
+        <h3>
+            <i class="fa-solid fa-bell"></i>
+            Fiesta Patronal
+        </h3>
+
+        <p>
+            <i class="fa-solid fa-church"></i>
+            Se invita a toda la comunidad a participar de las actividades
+            en honor a San Pedro Apóstol.
+        </p>
+    </article>
+</section>
+
+
+<section id="sacramentos">
+    <h2><i class="fa-solid fa-cross"></i> Sacramentos</h2>
+
+    <ul class="sacramentos-lista">
+        <li>
+            <a href="Bautismo.html" class="sacramento-btn">
+                <i class="fa-solid fa-water"></i>
+                Bautismos
+            </a>
+        </li>
+
+        <li>
+            <a href="Primera_Comunion.html" class="sacramento-btn">
+                <i class="fa-solid fa-wine-glass"></i>
+                Primera Comunión
+            </a>
+        </li>
+
+        <li>
+            <a href="Confirma.html" class="sacramento-btn">
+                <i class="fa-solid fa-dove"></i>
+                Confirmación
+            </a>
+        </li>
+
+        <li>
+            <a href="Matrimonio.html" class="sacramento-btn">
+                <i class="fa-solid fa-ring"></i>
+                Matrimonio
+            </a>
+        </li>
+    </ul>
+</section>
+
+
+
+<section id="homilias">
+    <h2><i class="fa-solid fa-book-bible"></i> Homilías y Sermones</h2>
+
+    <article class="homilia-item">
+        <p class="homilia-titulo">
+            <i class="fa-solid fa-cross"></i>
+            <strong>Domingo II del Tiempo Ordinario</strong>
+        </p>
+
+        <p class="homilia-fecha">
+            <i class="fa-solid fa-calendar-days"></i>
+            19 de enero de 2025
+        </p>
+
+        <a href="pdf/sermones/2025/2025-01-19-tiempo-ordinario.pdf"
+           target="_blank"
+           class="btn-pdf">
+            <i class="fa-solid fa-file-pdf"></i> Ver homilía
+        </a>
+    </article>
+</section>
+
+<section id="agenda">
+    <h2><i class="fa-solid fa-calendar-days"></i> Agenda Parroquial</h2>
+
+    <div class="agenda-controles">
+        <button onclick="cambiarDia(-1)">
+            <i class="fa-solid fa-chevron-left"></i> Día anterior
+        </button>
+
+        <span id="fecha-actual"></span>
+
+        <button onclick="cambiarDia(1)">
+            Día siguiente <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <div id="agenda-contenido"></div>
+</section>
+
+
+
+<section id="contacto">
+    <article>
+    <p><i class="fa-solid fa-location-dot"></i> Centro de la comunidad</p>
+    <p><i class="fa-solid fa-phone"></i> Tel: 2222-3333</p>
+    <p><i class="fa-solid fa-envelope"></i> parroquia@email.com</p>
+</article>
+</section>
+
+<footer>
+    <p>© Parroquia San Pedro Apóstol – Poás</p>
+    <p>Sitio web pastoral</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
