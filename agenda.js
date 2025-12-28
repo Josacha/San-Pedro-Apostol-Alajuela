@@ -51,6 +51,31 @@ function programarCalendarioAnual(anio) {
 programarCalendarioAnual(2025);
 programarCalendarioAnual(2026);
 
+
+// ===============================
+// MISAS ESPECIALES AÑO NUEVO
+// ===============================
+
+// --- MIÉRCOLES 31 DE DICIEMBRE 2025 ---
+agenda["2025-12-31"] = [
+    { hora: "4:30 p.m.", evento: "Misa Año Nuevo - Sabana Redonda (P. Felipe)", icono: "fa-church" },
+    { hora: "4:30 p.m.", evento: "Misa Año Nuevo - Santa Cecilia (Fray Gerardo)", icono: "fa-church" },
+    { hora: "4:30 p.m.", evento: "Misa Año Nuevo - Santa Rosa (P. Luis)", icono: "fa-church" },
+    { hora: "4:30 p.m.", evento: "Misa Año Nuevo - Calle Liles (P. Royner)", icono: "fa-church" },
+    { hora: "5:00 p.m.", evento: "Misa Año Nuevo - Cabuyal (P. Rodolfo)", icono: "fa-church" },
+    { hora: "6:00 p.m.", evento: "Misa Año Nuevo - Chilamate (P. Luis)", icono: "fa-church" },
+    { hora: "6:00 p.m.", evento: "Misa Año Nuevo - San Pedro (P. Royner)", icono: "fa-church" },
+    { hora: "6:30 p.m.", evento: "Misa Año Nuevo - San Rafael (P. Felipe)", icono: "fa-church" },
+    { hora: "4:30 p.m.", evento: "Misa Año Nuevo - Calle San José (Fray Mario)", icono: "fa-church" }
+];
+
+// --- JUEVES 1 DE ENERO 2026 ---
+agenda["2026-01-01"] = [
+    { hora: "8:00 a.m.", evento: "Misa Año Nuevo - San Pedro (P. Rodolfo)", icono: "fa-church" },
+    { hora: "9:30 a.m.", evento: "Misa Año Nuevo - San Juan Sur (P. Felipe)", icono: "fa-church" },
+    { hora: "10:00 a.m.", evento: "Misa Año Nuevo - San Pedro (P. Luis)", icono: "fa-church" },
+    { hora: "11:00 a.m.", evento: "Misa Año Nuevo - Guatusa (P. Felipe)", icono: "fa-church" }
+];
 /**
  * Formatea el objeto Date a string YYYY-MM-DD evitando desfases de zona horaria
  */
@@ -114,3 +139,4 @@ function cambiarDia(cantidad) {
 
 // Iniciar cuando cargue la página
 document.addEventListener("DOMContentLoaded", mostrarAgenda);
+
