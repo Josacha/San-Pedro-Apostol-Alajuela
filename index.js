@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!parroco) return;
 
     // Fecha: 5 de enero 2026 (hora segura)
-    const fechaCambio = new Date(2026, 0, 5); // enero = 0
+    const fechaCambio = new Date(2026, 0, 4); // enero = 0
     const hoy = new Date();
 
     if (hoy >= fechaCambio) {
@@ -14,5 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
 
 
