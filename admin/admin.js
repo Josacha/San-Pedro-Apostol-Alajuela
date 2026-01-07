@@ -5,17 +5,21 @@ import { signInWithEmailAndPassword } from
 const form = document.getElementById("loginForm");
 const error = document.getElementById("error");
 
-form.addEventListener("submit", e => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const email = email.value;
-  const password = password.value;
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
+
+  const email = emailInput.value;
+  const password = passwordInput.value;
 
   signInWithEmailAndPassword(auth, email, password)
     .then(() => {
       window.location.href = "dashboard.html";
     })
-    .catch(() => {
+    .catch((err) => {
       error.textContent = "Acceso no autorizado";
+      console.error(err);
     });
 });
