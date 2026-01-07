@@ -1,21 +1,21 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getStorage } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyCVeFIEU7usiWqTf3T-WRajr_yiLzXS9Sg",
   authDomain: "parroquia-poas.firebaseapp.com",
   projectId: "parroquia-poas",
-  storageBucket: "parroquia-poas.firebasestorage.app",
+  storageBucket: "parroquia-poas.appspot.com",
   messagingSenderId: "596282418076",
-  appId: "1:596282418076:web:afb6501afd707bbee05e59",
-  measurementId: "G-MPVDDL0DN0"
+  appId: "1:596282418076:web:afb6501afd707bbee05e59"
 };
 
-// Initialize Firebase
+// Inicializar Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
+// Exportar servicios
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+export const storage = getStorage(app);
