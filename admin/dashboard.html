@@ -2,22 +2,54 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-  <script type="module" src="proteger.js"></script>
 <title>Panel Administrativo</title>
+<link rel="stylesheet" href="admin.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-<h1>Panel Administrativo</h1>
+<script type="module" src="proteger.js"></script>
 
-<section>
-  <h2>Avisos Parroquiales</h2>
-  <textarea id="avisoTexto"></textarea>
-  <button onclick="guardarAviso()">Publicar Aviso</button>
-</section>
+<header class="admin-header">
+  <h1>Panel Administrativo</h1>
+  <button id="logout">Cerrar sesión</button>
+</header>
 
-<script type="module" src="dashboard.js"></script>
+<div class="admin-container">
 
-<button id="logout">Cerrar sesión</button>
+  <aside class="admin-sidebar">
+    <ul>
+      <li><a href="#"><i class="fa-solid fa-bullhorn"></i> Avisos</a></li>
+      <li><a href="#"><i class="fa-solid fa-calendar-days"></i> Agenda</a></li>
+      <li><a href="#"><i class="fa-solid fa-file"></i> Inscripciones</a></li>
+      <li><a href="#"><i class="fa-solid fa-users"></i> Usuarios</a></li>
+    </ul>
+  </aside>
+
+  <main class="admin-content">
+
+    <h2>Bienvenido</h2>
+    <p>Seleccione una opción del menú</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>Avisos</h3>
+        <p>Publicar y editar avisos parroquiales.</p>
+      </div>
+
+      <div class="card">
+        <h3>Agenda</h3>
+        <p>Administrar actividades y horarios.</p>
+      </div>
+
+      <div class="card">
+        <h3>Inscripciones</h3>
+        <p>Revisar formularios enviados.</p>
+      </div>
+    </div>
+
+  </main>
+</div>
 
 <script type="module">
 import { auth } from "../js/firebase-config.js";
@@ -31,14 +63,5 @@ document.getElementById("logout").addEventListener("click", () => {
 });
 </script>
 
-
-
-  
 </body>
-
-
-  
 </html>
-
-
-
