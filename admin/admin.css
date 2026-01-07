@@ -1,93 +1,6 @@
-:root {
-    --dorado: #b08d57;
-    --azul: #2c3e50;
-    --fondo: #f4f6f8;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: 'Lato', sans-serif;
-    background:
-        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-        url("../Imagenes/Templo_dorado.png") center/cover no-repeat;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.login-container {
-    width: 100%;
-    padding: 20px;
-}
-
-.login-card {
-    background: white;
-    max-width: 380px;
-    margin: auto;
-    padding: 35px;
-    border-radius: 18px;
-    text-align: center;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-}
-
-.login-card i {
-    font-size: 2.8rem;
-    color: var(--dorado);
-    margin-bottom: 10px;
-}
-
-.login-card h1 {
-    font-family: 'Playfair Display', serif;
-    color: var(--azul);
-}
-
-.login-card p {
-    margin-bottom: 25px;
-    color: #666;
-}
-
-input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-}
-
-button {
-    width: 100%;
-    padding: 12px;
-    background: var(--dorado);
-    color: white;
-    border: none;
-    border-radius: 25px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #9c7a45;
-}
-
-.error {
-    color: red;
-    margin-top: 10px;
-}
-
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* COLORES BASE */
+/* =========================
+   VARIABLES
+========================= */
 :root {
   --color-principal: #7a1f1f;   /* vino parroquial */
   --color-secundario: #caa24d;  /* dorado */
@@ -96,144 +9,69 @@ button:hover {
   --color-texto: #333;
 }
 
-/* BODY */
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BODY GENERAL
+========================= */
 body {
   font-family: "Lato", Arial, sans-serif;
   background: var(--color-fondo);
   color: var(--color-texto);
 }
 
-/* HEADER */
-.admin-header {
-  background: var(--color-principal);
-  color: white;
-  padding: 1.2rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.admin-header h1 {
-  font-size: 1.4rem;
-  font-weight: 600;
-}
-
-.admin-header button {
-  background: var(--color-secundario);
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-/* CONTENEDOR PRINCIPAL */
-.admin-container {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  min-height: calc(100vh - 70px);
-}
-
-/* SIDEBAR */
-.admin-sidebar {
-  background: #2f2f2f;
-  color: white;
-  padding: 1rem;
-}
-
-.admin-sidebar ul {
-  list-style: none;
-}
-
-.admin-sidebar li {
-  margin-bottom: 1rem;
-}
-
-.admin-sidebar a {
-  color: white;
-  text-decoration: none;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  padding: 0.6rem;
-  border-radius: 5px;
-}
-
-.admin-sidebar a:hover {
-  background: var(--color-principal);
-}
-
-/* CONTENIDO */
-.admin-content {
-  padding: 2rem;
-}
-
-/* TARJETAS */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-}
-
-.card {
-  background: var(--color-blanco);
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 5px 12px rgba(0,0,0,0.08);
-}
-
-.card h3 {
-  margin-bottom: 0.5rem;
-  color: var(--color-principal);
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .admin-container {
-    grid-template-columns: 1fr;
-  }
-
-  .admin-sidebar {
-    display: none;
-  }
-}
-
 /* =========================
    LOGIN ADMIN
-   ========================= */
-
+========================= */
 .login-container {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    rgba(122, 31, 31, 0.85),
-    rgba(122, 31, 31, 0.85)
-  ),
-  url("../Imagenes/Templo_dorado.png") center/cover no-repeat;
+  padding: 1.5rem;
+  background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url("../Imagenes/Templo_dorado.png") center/cover no-repeat;
 }
 
 .login-card {
   background: white;
-  padding: 2.5rem;
   width: 100%;
   max-width: 380px;
-  border-radius: 10px;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+  padding: 2rem;
+  border-radius: 15px;
   text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.login-card i {
+  font-size: 2.5rem;
+  color: var(--color-secundario);
+  margin-bottom: 0.5rem;
 }
 
 .login-card h2 {
-  margin-bottom: 1.5rem;
   color: var(--color-principal);
+  margin-bottom: 1rem;
+}
+
+.login-card p {
+  color: #666;
+  margin-bottom: 1.5rem;
 }
 
 .login-card input {
   width: 100%;
   padding: 12px;
   margin-bottom: 1rem;
-  border-radius: 5px;
+  border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 1rem;
 }
@@ -244,10 +82,10 @@ body {
   background: var(--color-principal);
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
+  font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
-  font-weight: bold;
 }
 
 .login-card button:hover {
@@ -260,5 +98,119 @@ body {
   font-size: 0.9rem;
 }
 
+/* =========================
+   HEADER ADMIN
+========================= */
+.admin-header {
+  background: var(--color-principal);
+  color: white;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.admin-header h1 {
+  font-size: 1.2rem;
+}
 
+.admin-header button {
+  background: var(--color-secundario);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* =========================
+   DASHBOARD LAYOUT
+========================= */
+.admin-container {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  min-height: calc(100vh - 60px);
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.admin-sidebar {
+  background: #2f2f2f;
+  color: white;
+  padding: 1rem;
+}
+
+.admin-sidebar ul {
+  list-style: none;
+}
+
+.admin-sidebar li {
+  margin-bottom: 0.8rem;
+}
+
+.admin-sidebar a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 0.6rem;
+  border-radius: 6px;
+}
+
+.admin-sidebar a:hover {
+  background: var(--color-principal);
+}
+
+/* =========================
+   CONTENIDO
+========================= */
+.admin-content {
+  padding: 1.5rem;
+}
+
+/* =========================
+   TARJETAS
+========================= */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+}
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+  color: var(--color-principal);
+  margin-bottom: 0.5rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+  /* Dashboard */
+  .admin-container {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-sidebar {
+    display: none;
+  }
+
+  .admin-header h1 {
+    font-size: 1rem;
+  }
+
+  /* Login */
+  .login-card {
+    padding: 1.8rem;
+  }
+}
