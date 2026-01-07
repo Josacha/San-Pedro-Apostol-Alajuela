@@ -1,15 +1,21 @@
-// ⚠️ Firebase se conecta aquí luego
-document.getElementById("loginForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+import { auth } from "../js/firebase-config.js";
+import { signInWithEmailAndPassword } from
+"https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+const form = document.getElementById("loginForm");
+const error = document.getElementById("error");
 
-    // 🔒 TEMPORAL (solo prueba visual)
-    if (email === "admin@parroquia.com" && password === "123456") {
-        window.location.href = "dashboard.html";
-    } else {
-        document.getElementById("loginError").innerText =
-            "Acceso denegado. Credenciales inválidas.";
-    }
+form.addEventListener("submit", e => {
+  e.preventDefault();
+
+  const email = email.value;
+  const password = password.value;
+
+  signInWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      window.location.href = "dashboard.html";
+    })
+    .catch(() => {
+      error.textContent = "Acceso no autorizado";
+    });
 });
