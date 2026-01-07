@@ -15,5 +15,26 @@
 </section>
 
 <script type="module" src="dashboard.js"></script>
+
+<button id="logout">Cerrar sesión</button>
+
+<script type="module">
+import { auth } from "../js/firebase-config.js";
+import { signOut } from
+"https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+document.getElementById("logout").addEventListener("click", () => {
+  signOut(auth).then(() => {
+    window.location.href = "login.html";
+  });
+});
+</script>
+
+
+  
 </body>
+
+
+  
 </html>
+
