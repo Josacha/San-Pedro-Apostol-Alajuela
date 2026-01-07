@@ -79,3 +79,123 @@ button:hover {
     color: red;
     margin-top: 10px;
 }
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* COLORES BASE */
+:root {
+  --color-principal: #7a1f1f;   /* vino parroquial */
+  --color-secundario: #caa24d;  /* dorado */
+  --color-fondo: #f4f4f4;
+  --color-blanco: #ffffff;
+  --color-texto: #333;
+}
+
+/* BODY */
+body {
+  font-family: "Lato", Arial, sans-serif;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+/* HEADER */
+.admin-header {
+  background: var(--color-principal);
+  color: white;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-header h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.admin-header button {
+  background: var(--color-secundario);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.admin-container {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  min-height: calc(100vh - 70px);
+}
+
+/* SIDEBAR */
+.admin-sidebar {
+  background: #2f2f2f;
+  color: white;
+  padding: 1rem;
+}
+
+.admin-sidebar ul {
+  list-style: none;
+}
+
+.admin-sidebar li {
+  margin-bottom: 1rem;
+}
+
+.admin-sidebar a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 0.6rem;
+  border-radius: 5px;
+}
+
+.admin-sidebar a:hover {
+  background: var(--color-principal);
+}
+
+/* CONTENIDO */
+.admin-content {
+  padding: 2rem;
+}
+
+/* TARJETAS */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--color-blanco);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--color-principal);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .admin-container {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-sidebar {
+    display: none;
+  }
+}
+
+
