@@ -5,21 +5,37 @@ import { signInWithEmailAndPassword } from
 const form = document.getElementById("loginForm");
 const error = document.getElementById("error");
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
+  error.textContent = "";
 
-  const emailInput = document.getElementById("email");
-  const passwordInput = document.getElementById("password");
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
 
-  const email = emailInput.value;
-  const password = passwordInput.value;
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    window.location.href = "dashboard.html";
+  } catch (err) {
+    switch (err.code) {
+      case "auth/user-not-found":
+        error.textContent = "❌ El correo no está registrado";
+        break;
 
-  signInWithEmailAndPassword(auth, email, password)
-    .then(() => {
-      window.location.href = "dashboard.html";
-    })
-    .catch((err) => {
-      error.textContent = "Acceso no autorizado";
-      console.error(err);
-    });
+      case "auth/wrong-password":
+        error.textContent = "❌ La contraseña es incorrecta";
+        break;
+
+      case "auth/invalid-email":
+        error.textContent = "❌ El formato del correo no es válido";
+        break;
+
+      case "auth/too-many-requests":
+        error.textContent = "⚠️ Demasiados intentos. Intente más tarde";
+        break;
+
+      default:
+        error.textContent = "❌ Acceso no autorizado";
+        console.error(err);
+    }
+  }
 });
