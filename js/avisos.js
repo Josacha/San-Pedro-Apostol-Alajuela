@@ -2,41 +2,35 @@ import { db } from "./firebase-config.js";
 import {
   collection,
   getDocs,
-  query,
-  orderBy
+  orderBy,
+  query
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 export async function cargarAvisos() {
-  const contenedor = document.getElementById("avisos-contenido");
+  const contenedor = document.getElementById("avisos");
+  contenedor.innerHTML = "<p>Cargando avisos...</p>";
 
-  try {
-    const q = query(
-      collection(db, "avisos"),
-      orderBy("fecha", "desc")
-    );
+  const q = query(collection(db, "avisos"), orderBy("fecha", "desc"));
+  const snap = await getDocs(q);
 
-    const snapshot = await getDocs(q);
+  contenedor.innerHTML = `
+    <h2><i class="fa-solid fa-bullhorn"></i> Avisos Parroquiales</h2>
+  `;
 
-    contenedor.innerHTML = "";
+  snap.forEach(docSnap => {
+    const aviso = docSnap.data();
 
-    if (snapshot.empty) {
-      contenedor.innerHTML = "<p>No hay avisos publicados.</p>";
-      return;
-    }
-
-    snapshot.forEach(doc => {
-      const aviso = doc.data();
-
-      contenedor.innerHTML += `
-        <article class="aviso-item">
-          <h3>${aviso.titulo}</h3>
-          <p>${aviso.mensaje}</p>
-        </article>
-      `;
-    });
-
-  } catch (error) {
-    contenedor.innerHTML = "<p>Error al cargar avisos.</p>";
-    console.error(error);
-  }
+    contenedor.innerHTML += `
+      <article class="aviso-item">
+        <h3>
+          <i class="fa-solid fa-bell"></i>
+          ${aviso.titulo}
+        </h3>
+        <p>
+          <i class="fa-solid fa-church"></i>
+          ${aviso.mensaje}
+        </p>
+      </article>
+    `;
+  });
 }
