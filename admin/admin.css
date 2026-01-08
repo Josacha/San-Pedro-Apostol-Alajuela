@@ -192,6 +192,144 @@ body {
 }
 
 /* =========================
+   AVISOS ADMIN
+   ========================= */
+
+.admin-content {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem 1.5rem;
+}
+
+/* TÍTULOS */
+.admin-content h2 {
+  font-family: "Playfair Display", serif;
+  color: #7a1f1f;
+  margin-bottom: 1rem;
+}
+
+/* FORMULARIO */
+#formAviso {
+  background: #ffffff;
+  padding: 1.8rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  margin-bottom: 2.5rem;
+}
+
+#formAviso input,
+#formAviso textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  font-family: "Lato", sans-serif;
+}
+
+#formAviso textarea {
+  min-height: 150px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+#formAviso button {
+  background: #7a1f1f;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#formAviso button:hover {
+  background: #5f1515;
+}
+
+/* LISTA DE AVISOS */
+#lista-avisos {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* TARJETA DE AVISO */
+.aviso-admin {
+  background: #fff;
+  padding: 1.6rem;
+  border-radius: 12px;
+  border-left: 6px solid #caa24d;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.07);
+  position: relative;
+}
+
+.aviso-admin h3 {
+  font-family: "Playfair Display", serif;
+  color: #7a1f1f;
+  margin-bottom: 0.6rem;
+}
+
+.aviso-admin p {
+  white-space: pre-line;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+/* BOTÓN ELIMINAR */
+.aviso-admin button {
+  background: #c0392b;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.aviso-admin button:hover {
+  background: #a93226;
+}
+
+/* HEADER */
+.admin-header {
+  background: #7a1f1f;
+  color: white;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-header a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.admin-header a:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .aviso-admin {
+    padding: 1.2rem;
+  }
+
+  .aviso-admin button {
+    position: static;
+    margin-top: 1rem;
+  }
+}
+
+
+/* =========================
    RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
@@ -228,5 +366,6 @@ textarea {
   min-height: 100px;
   margin-bottom: 1rem;
 }
+
 
 
