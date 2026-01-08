@@ -30,7 +30,7 @@ export async function cargarAvisos() {
       contenedor.innerHTML += `
         <article class="aviso-item">
           <h3>${aviso.titulo}</h3>
-          <p>${aviso.texto}</p>
+          <p>${aviso.mensaje}</p>
         </article>
       `;
     });
