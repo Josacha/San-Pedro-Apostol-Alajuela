@@ -214,3 +214,19 @@ body {
     padding: 1.8rem;
   }
 }
+
+.aviso-admin {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,.1);
+}
+
+textarea {
+  width: 100%;
+  min-height: 100px;
+  margin-bottom: 1rem;
+}
+
+
