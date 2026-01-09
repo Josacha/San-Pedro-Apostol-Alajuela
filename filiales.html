@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filiales – Parroquia San Pedro Apóstol</title>
+
+  <!-- FUENTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- ICONOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- ESTILOS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-text">
+    <h1>Filiales Parroquiales</h1>
+    <p>Parroquia San Pedro Apóstol – Poás</p>
+  </div>
+</header>
+
+<nav>
+  <a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a>
+  <a href="#filiales"><i class="fa-solid fa-church"></i> Filiales</a>
+  <a href="#avisos-filiales"><i class="fa-solid fa-bullhorn"></i> Avisos</a>
+</nav>
+
+<!-- =========================
+     FILIALES
+     ========================= -->
+<section id="filiales">
+  <h2><i class="fa-solid fa-church"></i> Filiales y Horarios Habituales</h2>
+
+  <div class="filiales-grid">
+
+    <article class="filial-card">
+      <h3>San Pedro Apóstol (Templo Parroquial)</h3>
+      <p><strong>Sábado:</strong> 4:00 p.m. y 6:00 p.m.</p>
+      <p><strong>Domingo:</strong> 7:00 a.m., 9:00 a.m., 11:00 a.m. y 5:00 p.m.</p>
+    </article>
+
+    <article class="filial-card">
+      <h3>San Rafael</h3>
+      <p><strong>Sábado:</strong> 5:30 p.m.</p>
+      <p><strong>Domingo:</strong> 9:00 a.m.</p>
+    </article>
+
+    <article class="filial-card">
+      <h3>Santa Cecilia</h3>
+      <p><strong>Sábado:</strong> 4:30 p.m.</p>
+    </article>
+
+    <article class="filial-card">
+      <h3>San Juan Sur</h3>
+      <p><strong>Domingo:</strong> 9:00 a.m.</p>
+    </article>
+
+    <article class="filial-card">
+      <h3>Santa Rosa</h3>
+      <p><strong>Domingo:</strong> 9:00 a.m.</p>
+    </article>
+
+    <article class="filial-card">
+      <h3>Chilamate</h3>
+      <p><strong>Domingo:</strong> 10:30 a.m.</p>
+    </article>
+
+    <article class="filial-card">
+      <h3>Cabuyal</h3>
+      <p><strong>Domingo:</strong> 10:30 a.m.</p>
+    </article>
+
+    <article class="filial-card">
+      <h3>Guatusa</h3>
+      <p><strong>Domingo:</strong> 10:30 a.m.</p>
+    </article>
+
+    <article class="filial-card">
+      <h3>Calle Liles</h3>
+      <p><strong>Sábado:</strong> 4:00 p.m.</p>
+    </article>
+
+  </div>
+</section>
+
+<!-- =========================
+     AVISOS GENERALES
+     ========================= -->
+<section id="avisos-filiales">
+  <h2><i class="fa-solid fa-bullhorn"></i> Avisos Generales de Filiales</h2>
+
+  <div id="avisos-filiales-contenedor">
+    <!-- Avisos desde Firebase -->
+  </div>
+</section>
+
+<footer>
+  <p>© Parroquia San Pedro Apóstol – Poás</p>
+</footer>
+
+<script type="module">
+  import { cargarAvisosFiliales } from "./js/avisos-filiales.js";
+  cargarAvisosFiliales();
+</script>
+
+</body>
+</html>
