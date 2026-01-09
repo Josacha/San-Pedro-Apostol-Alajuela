@@ -512,6 +512,60 @@ footer {
     }
 }
 
+/* =========================
+   FILIALES
+   ========================= */
+
+.filiales-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.filial-card {
+  background: white;
+  padding: 1.4rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  border-left: 6px solid #caa24d;
+}
+
+.filial-card h3 {
+  color: #7a1f1f;
+  margin-bottom: 0.6rem;
+  font-family: "Playfair Display", serif;
+}
+
+.filial-card p {
+  line-height: 1.6;
+}
+
+/* AVISOS FILIALES */
+#avisos-filiales-contenedor {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.aviso-filial {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+.aviso-filial h3 {
+  color: #7a1f1f;
+  margin-bottom: 0.5rem;
+}
+
+.aviso-filial p {
+  white-space: pre-line;
+  line-height: 1.6;
+}
+
+
 
 
 
