@@ -23,10 +23,16 @@ export async function cargarAvisosFiliales() {
   snap.forEach(doc => {
     const aviso = doc.data();
 
-    contenedor.innerHTML += `
-      <article class="aviso-filial">
-        <h3>${aviso.titulo}</h3>
-        <p>${aviso.mensaje}</p>
+   contenedor.innerHTML += `
+      <article class="aviso-item">
+        <h3>
+          <i class="fa-solid fa-bell"></i>
+          ${aviso.titulo}
+        </h3>
+        <p>
+          <i class="fa-solid fa-church"></i>
+          ${aviso.mensaje}
+        </p>
       </article>
     `;
   });
