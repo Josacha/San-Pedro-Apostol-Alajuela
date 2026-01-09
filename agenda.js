@@ -29,21 +29,50 @@ function programarCalendarioAnual(anio) {
                 { hora: "4:00 p.m.", evento: "Misa de Vísperas", icono: "fa-church" },
                 { hora: "6:00 p.m.", evento: "Misa de Vísperas", icono: "fa-church" }
             ];
+
+                    } else if (diaSemana === 1) { 
+            // --- LUNES  ---
+            agenda[fechaStr] = [
+                { hora: "8:00 a.m.", evento: "Misa matutina", icono: "fa-church" },
+                { hora: "8:00 a.m.", evento: "Atención oficina parroquial", icono: "fa-building" },
+                { hora: "9:00 a.m. - 11:30 a.m.", evento: "Atención sacerdotal ", icono: "fa-book-bible" },
+                
+            ];
+
+                                } else if (diaSemana === 2) { 
+            // --- Martes ---
+            agenda[fechaStr] = [
+                { hora: "8:00 a.m.", evento: "Misa matutina", icono: "fa-church" },
+                { hora: "8:00 a.m.", evento: "Atención oficina parroquial", icono: "fa-building" },
+                { hora: "2:30 p.m. - 5:00 p.m.", evento: "Atención sacerdotal ", icono: "fa-book-bible" },
+               
+            ];
+
+            } else if (diaSemana === 3) { 
+            // --- Miercoles(Especial:) ---
+            agenda[fechaStr] = [
+                { hora: "8:00 a.m.", evento: "Misa matutina", icono: "fa-church" },
+                { hora: "8:00 a.m.", evento: "Atención oficina parroquial", icono: "fa-building" },
+            ];
         } else if (diaSemana === 4) { 
             // --- JUEVES (Especial: Sin misa 6pm) ---
             agenda[fechaStr] = [
                 { hora: "8:00 a.m.", evento: "Misa matutina", icono: "fa-church" },
-                { hora: "9:00 a.m.", evento: "Atención oficina parroquial", icono: "fa-building" },
+                { hora: "8:00 a.m.", evento: "Atención oficina parroquial", icono: "fa-building" },
+                { hora: "9:00 a.m. - 11:30 a.m.", evento: "Atención sacerdotal ", icono: "fa-book-bible" },
+                { hora: "2:00 p.m. - 5:00 p.m.", evento: "Atención sacerdotal ", icono: "fa-book-bible" },
                 { hora: "6:30 p.m.", evento: "Hora Santa", icono: "fa-sun" }
             ];
-        } else {
-            // --- LUNES, MARTES, MIÉRCOLES Y VIERNES ---
+
+                                  } else if (diaSemana === 5) { 
+            // --- Martes ---
             agenda[fechaStr] = [
-                { hora: "8:00 a.m.", evento: "Misa Matutina", icono: "fa-wine-glass" },
-                { hora: "9:00 a.m.", evento: "Atención oficina parroquial", icono: "fa-building" }
-                
+                { hora: "8:00 a.m.", evento: "Misa matutina", icono: "fa-church" },
+                { hora: "8:00 a.m.", evento: "Atención oficina parroquial", icono: "fa-building" },
+                { hora: "9:00 a.m. - 11:30 a.m.", evento: "Atención sacerdotal ", icono: "fa-book-bible" },
+               
             ];
-        }
+        } 
     }
 }
 
@@ -139,4 +168,5 @@ function cambiarDia(cantidad) {
 
 // Iniciar cuando cargue la página
 document.addEventListener("DOMContentLoaded", mostrarAgenda);
+
 
