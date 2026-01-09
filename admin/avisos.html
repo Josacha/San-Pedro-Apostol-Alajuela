@@ -1,34 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Admin | Avisos</title>
-<link rel="stylesheet" href="admin.css">
+  <meta charset="UTF-8">
+  <title>Admin | Avisos</title>
+  <link rel="stylesheet" href="admin.css">
 </head>
 <body>
 
 <header class="admin-header">
-  <h1>Avisos Parroquiales</h1>
+  <h1>Gestión de Avisos</h1>
   <a href="dashboard.html">⬅ Volver</a>
 </header>
 
 <section class="admin-content">
 
-<h2>Nuevo Aviso</h2>
+<!-- ================= AVISOS PARROQUIALES ================= -->
+<section class="admin-box">
+  <h2>📣 Avisos Parroquiales</h2>
 
-<form id="formAviso">
-  <input type="text" id="titulo" placeholder="Título del aviso" required>
-  <textarea id="mensaje" placeholder="Contenido del aviso" required></textarea>
-  <button type="submit">Publicar aviso</button>
-</form>
+  <form id="formAvisoParroquia">
+    <input type="text" id="tituloParroquia" placeholder="Título" required>
+    <textarea id="mensajeParroquia" placeholder="Mensaje" required></textarea>
+    <button type="submit">Publicar aviso</button>
+  </form>
+
+  <div id="lista-avisos-parroquia"></div>
+</section>
 
 <hr>
 
-<h2>Avisos Publicados</h2>
-<div id="lista-avisos"></div>
+<!-- ================= AVISOS FILIALES ================= -->
+<section class="admin-box">
+  <h2>🏘️ Avisos Generales de Filiales</h2>
+
+  <form id="formAvisoFiliales">
+    <input type="text" id="tituloFiliales" placeholder="Título" required>
+    <textarea id="mensajeFiliales" placeholder="Mensaje" required></textarea>
+    <button type="submit">Publicar aviso</button>
+  </form>
+
+  <div id="lista-avisos-filiales"></div>
+</section>
 
 </section>
 
-<script type="module" src="avisos-admin.js"></script>
+<!-- JS separados -->
+<script type="module" src="avisos-parroquia.js"></script>
+<script type="module" src="avisos-filiales.js"></script>
+
 </body>
 </html>
