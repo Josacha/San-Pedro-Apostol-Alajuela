@@ -566,6 +566,92 @@ footer {
 }
 
 
+/* =========================
+   SACRAMENTOS
+   ========================= */
+
+#sacramentos {
+    padding: 60px 20px;
+    background: linear-gradient(180deg, #f8f6f2, #ffffff);
+    text-align: center;
+}
+
+.sacramentos-lista {
+    list-style: none;
+    padding: 0;
+    margin: 40px auto 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    max-width: 900px;
+}
+
+.sacramento-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 35px 20px;
+
+    text-decoration: none;
+    color: #2c2c2c;
+
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.sacramento-btn i {
+    font-size: 2.5rem;
+    color: #b08d57; /* dorado parroquial */
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover */
+.sacramento-btn:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.sacramento-btn:hover i {
+    transform: scale(1.15);
+}
+
+/* Efecto de luz */
+.sacramento-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top, rgba(176,141,87,0.15), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sacramento-btn:hover::after {
+    opacity: 1;
+}
+
+/* Responsive extra */
+@media (max-width: 480px) {
+    .sacramento-btn {
+        padding: 30px 15px;
+        font-size: 1rem;
+    }
+
+    .sacramento-btn i {
+        font-size: 2.2rem;
+    }
+}
+
 
 
 
