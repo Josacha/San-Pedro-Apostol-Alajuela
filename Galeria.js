@@ -12,7 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
     "Imagenes/Carrucel/9.jpg",
     "Imagenes/Carrucel/10.jpg",
     "Imagenes/Carrucel/11.jpg",
-    "Imagenes/Carrucel/12.jpg"
+    "Imagenes/Carrucel/13.png",
+    "Imagenes/Carrucel/14.png",
+    "Imagenes/Carrucel/15.png",
+    "Imagenes/Carrucel/16.png",
+    "Imagenes/Carrucel/17.png"
   ];
 
   const grid = document.querySelector(".galeria-grid");
